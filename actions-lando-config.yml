@@ -1,0 +1,12 @@
+# Disable the "core" joomla plugins
+disablePlugins:
+  - lando-joomla
+
+# Make sure we are dogfooding this plugin for testing purposes
+plugins:
+  "@lando/joomla": /home/runner/work/joomla/joomla
+
+# Disable metrics reporting
+stats:
+  - report: false
+    url: https://metrics.lando.dev
