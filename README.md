@@ -1,65 +1,44 @@
-# Lando Joomla Plugin
+# Joomla Lando Plugin
 
-The Lando Joomla plugin recipe.
+This is the _official_ [Lando](https://lando.dev) plugin for [Joomla](https://www.joomla.org/). When installed it...
 
-## Installation
+* Allows users to run `joomla` cms
+* Allows users to configure `php` version from `5.3` all the way to `8.1`
+* Allows users to configure `webroot`
+* Allows users to configure web server to (`apache` or `nginx`)
+* Allows users to configure database backend to (`mariadb` or `mysql`)
+* Allows users to configure `composer`
+* Allows users to configure `xdebug`
+* Allows users to run `joomla` cli commands
 
-```bash
-# With npm
-npm install @lando/joomla
+Of course, once a user is running their Joomla project with Lando they can take advantage of [all the other awesome development features](https://docs.lando.dev) Lando provides.
 
-# With yarn
-yarn add @lando/joomla
+## Basic Usage
+
+Add a `joomla` recipe to your Landofile
+
+```yaml
+name: joomla-app
+recipe: joomla
 ```
+
+For more info you should check out the [docs](https://docs.lando.dev/joomla):
+
+* [Getting Started](https://docs.lando.dev/joomla/)
+* [Configuration](https://docs.lando.dev/joomla/config.html)
+* [Tooling](https://docs.lando.dev/joomla/tooling.html)
+* [Examples](https://github.com/lando/joomla/tree/main/examples)
+* [Development](https://docs.lando.dev/joomla/development.html)
 
 ## Issues, Questions and Support
 
-If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando). Note that this is the Slack community for [Lando](https://lando.dev) but we are more than happy to help with this module as well!
+If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando).
 
 If you'd like to report a bug or submit a feature request then please [use the issue queue](https://github.com/lando/joomla/issues/new/choose) in this repo.
 
 ## Changelog
 
 We try to log all changes big and small in both [THE CHANGELOG](https://github.com/lando/joomla/blob/main/CHANGELOG.md) and the [release notes](https://github.com/lando/joomla/releases).
-
-
-## Development
-
-* Requires [Node 14+](https://nodejs.org/dist/latest-v14.x/)
-* Prefers [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
-
-```bash
-git clone https://github.com/lando/joomla.git && cd joomla
-yarn install
-```
-
-If you dont' want to install Node 14 or Yarn for whatever reason you can install [Lando](https://docs.lando.dev/basics/installation.html) and use that:
-
-```bash
-git clone https://github.com/lando/joomla.git && cd joomla
-# Install deps and get node
-lando start
-
-# Run commands
-lando node
-lando yarn
-```
-
-## Testing
-
-```bash
-# Lint the code
-yarn lint
-
-# Run unit tests
-yarn test
-```
-
-## Releasing
-
-```bash
-yarn release
-```
 
 ## Contributors
 
@@ -69,6 +48,7 @@ yarn release
 
 Made with [contributors-img](https://contrib.rocks).
 
-## Other Resources
+## Other Selected Resources
 
-* [Important advice](https://www.youtube.com/watch?v=WA4iX5D9Z64)
+* [LICENSE](https://github.com/lando/joomla/blob/main/LICENSE.md)
+* [The best professional advice ever](https://www.youtube.com/watch?v=tkBVDh7my9Q)
