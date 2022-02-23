@@ -17,3 +17,4 @@ Lando offers a configurable [recipe](https://docs.lando.dev/config/recipes.html)
 * Configurable database backend (`mariadb`, `mysql`, or `postgres`)
 * Configurable `composer`
 * `xdebug`
+* `joomla` cli commands

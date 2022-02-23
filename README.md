@@ -9,6 +9,7 @@ This is the _official_ [Lando](https://lando.dev) plugin for [Joomla](https://ww
 * Allows users to configure database backend to (`mariadb` or `mysql`)
 * Allows users to configure `composer`
 * Allows users to configure `xdebug`
+* Allows users to run `joomla` cli commands
 
 Of course, once a user is running their Joomla project with Lando they can take advantage of [all the other awesome development features](https://docs.lando.dev) Lando provides.
 
