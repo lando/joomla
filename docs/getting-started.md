@@ -17,10 +17,13 @@ Before you get started with this recipe we assume that you have:
 Try out the relevant commands below to spin up a new Landoified vanilla Joomla site.
 
 ```bash
+# Create folder and enter it
+mkdir joomla && cd joomla
+
 # Initialize a joomla recipe using the latest Joomla version
 lando init \
   --source remote \
-  --remote-url https://downloads.joomla.org/cms/joomla3/3-9-2/Joomla_3-9-2-Stable-Full_Package.tar.gz \
+  --remote-url https://downloads.joomla.org/cms/joomla4/4-1-0/Joomla_4-1-0-Stable-Full_Package.tar.gz \
   --recipe joomla \
   --webroot . \
   --name my-first-joomla-app
@@ -31,6 +34,7 @@ lando start
 # List information about this app.
 lando info
 ```
+Log in as administrator at https://my-first-joomla-app.lndo.site/administrator/.
 
 ## Custom Installation
 
