@@ -58,7 +58,7 @@ jobs:
         run: |
           lando --clear
           lando version
-          lando config --path plugins | grep joomla | grep /home/runner/work/joomla/joomla || echo "::error:: Not dogfooding this plugin correctly! "
+          lando config --path plugins | grep joomla | grep /home/runner/work/joomla/joomla || (echo "::error:: Not dogfooding this plugin correctly!" && exit 1)
 
       # This block should eventually become use lando/actions-leia@v2
       # @NOTE? Do we want a way for our leia-action to configure apparmor since
