@@ -13,6 +13,7 @@ jobs:
       matrix:
         leia-tests:
           - examples/joomla
+          - examples/joomla-mysql8
         lando-versions:
           - edge
         os:
