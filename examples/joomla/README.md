@@ -30,7 +30,7 @@ Verification commands
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should return the drupal installation page by default
+# Should return the joomla installation page by default
 cd joomla
 lando ssh -s appserver -c "curl -L localhost" | grep "Joomla"
 
