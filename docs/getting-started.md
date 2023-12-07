@@ -49,12 +49,12 @@ However if you would like to manually install the plugin, update it to the bleed
 mkdir -p ~/.lando/plugins
 
 # Install plugin
-# NOTE: Modify the "yarn add @lando/joomla" line to install a particular version eg
-# yarn add @lando/platform@0.5.2
+# NOTE: Modify the "npm install @lando/joomla" line to install a particular version eg
+# npm install @lando/platform@0.5.2
 docker run --rm -it -v ${HOME}/.lando/plugins:/plugins -w /tmp node:14-alpine sh -c \
-  "yarn init -y \
-  && yarn add @lando/joomla --production --flat --no-default-rc --no-lockfile --link-duplicates \
-  && yarn install --production --cwd /tmp/node_modules/@lando/joomla \
+  "npm init -y \
+  && npm install @lando/joomla --production --flat --no-default-rc --no-lockfile --link-duplicates \
+  && npm install --production --cwd /tmp/node_modules/@lando/joomla \
   && mkdir -p /plugins/@lando \
   && mv --force /tmp/node_modules/@lando/joomla /plugins/@lando/joomla"
 
