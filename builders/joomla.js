@@ -178,7 +178,6 @@ const getServiceConfig = (options, types = ['php', 'server', 'vhosts']) => {
  */
 const getTooling = options => _.merge({}, toolingDefaults, getDbTooling(options.database));
 
-/
 /*
  * Build Drupal 7
  */
