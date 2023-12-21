@@ -11,15 +11,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        leia-test:
-          - examples/joomla
-          - examples/joomla-mysql8
         lando-version:
           - 3-dev-slim
         os:
           - ubuntu-22.04
         node-version:
           - '18'
+        leia-test:
+          - examples/joomla
+          - examples/joomla-mysql8
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -31,18 +32,20 @@ jobs:
           cache: npm
       - name: Install NPM dependencies
         run: npm clean-install --prefer-offline --frozen-lockfile
+      - name: Bundle Deps
+        uses: lando/prepare-release-action@v2
+        with:
+          lando-plugin: true
+          version: dev
+          sync: false
       - name: Setup lando ${{ matrix.lando-version }}
         uses: lando/setup-lando@v2
         with:
           lando-version: ${{ matrix.lando-version }}
           config: |
-            plugins.@lando/joomla=/home/runner/work/joomla/joomla
+            setup.skipCommonPlugins=true
+            setup.plugins.@lando/joomla=/home/runner/work/joomla/joomla
           telemetry: false
-      - name: Verify Lando works and we are dogfooding this plugin for tests
-        run: |
-          lando --clear
-          lando version
-          lando config --path plugins | grep joomla | grep /home/runner/work/joomla/joomla || (echo "::error:: Not dogfooding this plugin correctly!" && exit 1)
       - name: Run Leia Tests
         uses: lando/run-leia-action@v2
         with:
