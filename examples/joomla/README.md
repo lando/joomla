@@ -16,7 +16,6 @@ lando poweroff
 
 # Should initialize the latest Joomla codebase
 rm -rf joomla && mkdir -p joomla && cd joomla
-lando --clear
 lando init --source remote --remote-url https://downloads.joomla.org/cms/joomla3/3-10-4/Joomla_3-10-4-Stable-Full_Package.tar.gz --recipe joomla --webroot . --name lando-joomla
 cp -f ../../.lando.local.yml .lando.local.yml && cat .lando.local.yml
 
