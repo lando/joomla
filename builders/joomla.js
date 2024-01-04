@@ -197,6 +197,7 @@ module.exports = {
     via: 'apache',
     webroot: '.',
     xdebug: false,
+    proxy: {},
   },
   builder: (parent, config) => class LandoJoomla extends parent {
     constructor(id, options = {}) {
