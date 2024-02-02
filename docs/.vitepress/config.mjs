@@ -31,7 +31,9 @@ function sidebar() {
       items: [
         {text: 'Overview', link: '/'},
         {text: 'Installation', link: '/install'},
+        {text: 'Getting Started', link: '/getting-started'},
         {text: 'Usage', link: '/config'},
+        {text: 'Tooling', link: '/tooling'},
       ],
     },
     {

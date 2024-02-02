@@ -34,5 +34,5 @@ lando start
 # List information about this app.
 lando info
 ```
-Log in as administrator at https://my-first-joomla-app.lndo.site/administrator/.
+Log in as administrator at `https://my-first-joomla-app.lndo.site/administrator/`.
 
