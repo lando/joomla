@@ -1,0 +1,58 @@
+import {createRequire} from 'module';
+
+import {defineConfig} from '@lando/vitepress-theme-default-plus/config';
+
+const require = createRequire(import.meta.url);
+
+const {name, version} = require('../../package.json');
+const landoPlugin = name.replace('@lando/', '');
+
+export default defineConfig({
+  title: 'Lando Joomla Plugin',
+  description: 'The offical Lando plugin for Joomla.',
+  landoDocs: 3,
+  landoPlugin,
+  version,
+  head: [
+    ['meta', {name: 'viewport', content: 'width=device-width, initial-scale=1'}],
+    ['link', {rel: 'icon', href: '/joomla/favicon.ico', size: 'any'}],
+    ['link', {rel: 'icon', href: '/joomla/favicon.svg', type: 'image/svg+xml'}],
+  ],
+  themeConfig: {
+    sidebar: sidebar(),
+  },
+});
+
+function sidebar() {
+  return [
+    {
+      text: 'Introduction',
+      collapsed: false,
+      items: [
+        {text: 'Overview', link: '/'},
+        {text: 'Installation', link: '/install'},
+        {text: 'Getting Started', link: '/getting-started'},
+        {text: 'Usage', link: '/config'},
+        {text: 'Tooling', link: '/tooling'},
+      ],
+    },
+    {
+      text: 'Contribution',
+      collapsed: true,
+      items: [
+        {text: 'Development', link: '/development'},
+        {text: 'Team', link: '/team'},
+      ],
+    },
+    {
+      text: 'Help & Support',
+      collapsed: true,
+      items: [
+        {text: 'GitHub', link: 'https://github.com/lando/joomla/issues/new/choose'},
+        {text: 'Slack', link: 'https://www.launchpass.com/devwithlando'},
+        {text: 'Contact Us', link: '/support'},
+      ],
+    },
+    {text: 'Examples', link: 'https://github.com/lando/joomla/tree/main/examples'},
+  ];
+};
