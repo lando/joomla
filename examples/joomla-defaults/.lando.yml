@@ -1,0 +1,6 @@
+name: joomla-defaults
+recipe: joomla
+
+# do not remove this
+plugins:
+  "@lando/joomla": ../..

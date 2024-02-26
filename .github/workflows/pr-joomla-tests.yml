@@ -18,8 +18,13 @@ jobs:
         node-version:
           - '18'
         leia-test:
-          - examples/joomla
+          - examples/joomla-custom
+          - examples/joomla-defaults
+          - examples/joomla-export
+          - examples/joomla-import
+          - examples/joomla-init
           - examples/joomla-mysql8
+          - examples/joomla-ngnix
 
     steps:
       - name: Checkout code

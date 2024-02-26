@@ -1,7 +1,6 @@
 #
 # The MySQL database server configuration file for Lando
 #
-# LANDOJOOMLAMYSQL8CNF
 
 [mysqld]
 #
@@ -13,10 +12,10 @@ default-storage-engine = innodb
 #
 # * Fine Tuning
 #
-key_buffer_size    = 384M
+key_buffer_size    = 38M
 max_allowed_packet  = 32M
 thread_stack    = 400K
-thread_cache_size       = 8
+thread_cache_size       = 12
 # This replaces the startup script and checks MyISAM tables if needed
 # the first time they are touched
 #max_connections        = 100
@@ -28,6 +27,11 @@ table_open_cache = 512
 sort_buffer_size = 2M
 read_buffer_size = 2M
 
+#
+# * Query Cache Configuration
+#
+query_cache_limit = 1M
+query_cache_size = 64M
 #
 # * Logging and Replication
 #
@@ -50,7 +54,7 @@ read_buffer_size = 2M
 #server-id    = 1
 #log_bin      = /src/.lando/log/mysql-bin.log
 expire_logs_days = 10
-max_binlog_size = 101M
+max_binlog_size = 100M
 #binlog_do_db   = include_database_name
 #binlog_ignore_db = include_database_name
 #
@@ -78,7 +82,7 @@ innodb_open_files       = 256
 innodb_io_capacity      = 512
 innodb_flush_method     = O_DIRECT
 innodb_thread_concurrency = 8
-innodb_lock_wait_timeout = 127
+innodb_lock_wait_timeout = 120
 #
 # * Security Features
 #

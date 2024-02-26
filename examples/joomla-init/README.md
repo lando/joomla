@@ -1,5 +1,5 @@
-Joomla Example
-==============
+Joomla Init Example
+===============
 
 This example exists primarily to test the following documentation:
 
@@ -14,10 +14,15 @@ Run the following commands to get up and running with this example.
 # Should poweroff
 lando poweroff
 
-# Should initialize the latest Joomla codebase
+# Initialize an empty Joomla recipe
 rm -rf joomla && mkdir -p joomla && cd joomla
-lando init --source remote --remote-url https://downloads.joomla.org/cms/joomla3/3-10-4/Joomla_3-10-4-Stable-Full_Package.tar.gz --recipe joomla --webroot . --name lando-joomla
-cp -f ../../.lando.local.yml .lando.local.yml && cat .lando.local.yml
+lando init --source cwd --recipe joomla --webroot /app/public --name lando-joomla --option cache=redis
+
+# Should compose create-project a new joomla app
+cd joomla
+cp ../.lando.local.yml .
+lando ssh -s appserver -c "/helpers/install-composer.sh 2"
+rm -rf tmp && lando composer create-project joomla/skeleton tmp && cp -r tmp/. .
 
 # Should start up successfully
 cd joomla
@@ -30,13 +35,9 @@ Verification commands
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should return the joomla installation page by default
+# Should use 8.2 as the default php version
 cd joomla
-lando ssh -s appserver -c "curl -L localhost" | grep "Joomla"
-
-# Should use 7.4 as the default php version
-cd joomla
-lando php -v | grep "PHP 7.4"
+lando php -v | grep "PHP 8.2"
 
 # Should be running apache 2.4 by default
 cd joomla
@@ -51,13 +52,17 @@ lando mysql -V | grep 5.7
 cd joomla
 lando php -m | grep xdebug || echo $? | grep 1
 
+# Should have redis running
+cd joomla
+lando ssh -s cache -c "redis-cli CONFIG GET databases"
+
 # Should use the default database connection info
 cd joomla
 lando mysql -ujoomla -pjoomla joomla -e quit
 
-# Should use joomla console by default
+# Should have console available
 cd joomla
-lando joomla -V
+lando composer list
 ```
 
 Destroy tests

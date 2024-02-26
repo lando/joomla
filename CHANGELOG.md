@@ -2,7 +2,7 @@
 
 ### New Features
 
-* Added support for `php:8.3` [#39](https://github.com/lando/wordpress/issues/39)
+* Added support for `php:8.3` 
 
 ### Internal
 

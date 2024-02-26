@@ -1,0 +1,10 @@
+name: joomla-mysql8
+recipe: joomla
+config:
+  webroot: web
+  php: 5.6
+  database: mysql:8.0.22
+
+# do not remove this
+plugins:
+  "@lando/joomla": ../..
