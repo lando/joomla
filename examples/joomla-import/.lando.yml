@@ -1,0 +1,12 @@
+name: joomla-import
+recipe: joomla
+
+events:
+  post-db-import:
+    - database: /app/test.sh
+    - database: echo "i-ran" > /tmp/iran.txt
+    - echo "stuff"
+
+# do not remove this
+plugins:
+  "@lando/joomla": ../..

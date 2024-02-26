@@ -1,9 +1,8 @@
-Joomla Example
-==============
+# Joomla Defaults Example
 
 This example exists primarily to test the following documentation:
 
-* [Joomla Recipe](https://docs.devwithlando.io/tutorials/joomla.html)
+* [Joomla Recipe](https://docs.lando.dev/joomla/config.html)
 
 Start up tests
 --------------
@@ -11,16 +10,8 @@ Start up tests
 Run the following commands to get up and running with this example.
 
 ```bash
-# Should poweroff
-lando poweroff
-
-# Should initialize the latest Joomla codebase
-rm -rf joomla && mkdir -p joomla && cd joomla
-lando init --source remote --remote-url https://downloads.joomla.org/cms/joomla3/3-10-4/Joomla_3-10-4-Stable-Full_Package.tar.gz --recipe joomla --webroot . --name lando-joomla
-cp -f ../../.lando.local.yml .lando.local.yml && cat .lando.local.yml
-
 # Should start up successfully
-cd joomla
+lando poweroff
 lando start
 ```
 
@@ -30,34 +21,33 @@ Verification commands
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should return the joomla installation page by default
-cd joomla
-lando ssh -s appserver -c "curl -L localhost" | grep "Joomla"
+# Should serve from app root by default
+lando ssh -s appserver -c "curl -L localhost" | grep "DEFAULTS"
 
 # Should use 7.4 as the default php version
-cd joomla
 lando php -v | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
-cd joomla
 lando ssh -s appserver -c "apachectl -V | grep 2.4"
 lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
 
 # Should be running mysql 5.7 by default
-cd joomla
-lando mysql -V | grep 5.7
+lando mysql -V | grep 5.7 
 
 # Should not enable xdebug by default
-cd joomla
 lando php -m | grep xdebug || echo $? | grep 1
 
 # Should use the default database connection info
-cd joomla
-lando mysql -ujoomla -pjoomla joomla -e quit
+lando mysql joomla -e quit
 
-# Should use joomla console by default
-cd joomla
-lando joomla -V
+# Should use composer 2 by default
+lando ssh -s appserver -c "/bin/sh -c 'NO_COLOR=1 composer -V'" | grep "Composer version 2."
+
+# Should use the correct default config files
+lando ssh -s appserver -c "cat /usr/local/etc/php/conf.d/zzz-lando-my-custom.ini" | grep "; LANDOJOOMLAPHPINI"
+lando ssh -s appserver -c "curl -L http://localhost/info.php" | grep max_execution_time | grep 91
+lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDOJOOMLAMYSQLCNF"
+lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 121
 ```
 
 Destroy tests
@@ -67,7 +57,6 @@ Run the following commands to trash this app like nothing ever happened.
 
 ```bash
 # Should be destroyed with success
-cd joomla
 lando destroy -y
 lando poweroff
 ```
