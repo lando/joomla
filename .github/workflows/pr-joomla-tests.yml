@@ -24,7 +24,7 @@ jobs:
           - examples/joomla-import
           - examples/joomla-init
           - examples/joomla-mysql8
-          - examples/joomla-ngnix
+          - examples/joomla-nginx
 
     steps:
       - name: Checkout code

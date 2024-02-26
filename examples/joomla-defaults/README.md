@@ -24,8 +24,8 @@ Run the following commands to validate things are rolling as they should.
 # Should serve from app root by default
 lando ssh -s appserver -c "curl -L localhost" | grep "DEFAULTS"
 
-# Should use 8.2 as the default php version
-lando php -v | grep "PHP 8.2"
+# Should use 7.4 as the default php version
+lando php -v | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
 lando ssh -s appserver -c "apachectl -V | grep 2.4"
@@ -44,9 +44,9 @@ lando mysql joomla -e quit
 lando ssh -s appserver -c "/bin/sh -c 'NO_COLOR=1 composer -V'" | grep "Composer version 2."
 
 # Should use the correct default config files
-lando ssh -s appserver -c "cat /usr/local/etc/php/conf.d/zzz-lando-my-custom.ini" | grep "; LANDOSYMFONYPHPINI"
+lando ssh -s appserver -c "cat /usr/local/etc/php/conf.d/zzz-lando-my-custom.ini" | grep "; LANDOJOOMLAPHPINI"
 lando ssh -s appserver -c "curl -L http://localhost/info.php" | grep max_execution_time | grep 91
-lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDOSYMFONYMYSQLCNF"
+lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDOJOOMLAMYSQLCNF"
 lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 121
 ```
 

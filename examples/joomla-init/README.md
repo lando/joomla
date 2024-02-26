@@ -16,7 +16,7 @@ lando poweroff
 
 # Initialize an empty Joomla recipe
 rm -rf joomla && mkdir -p joomla && cd joomla
-lando init --source cwd --recipe joomla --webroot /app/public --name lando-joomla --option cache=redis
+lando init --source remote --remote-url https://downloads.joomla.org/cms/joomla4/4-1-0/Joomla_4-1-0-Stable-Full_Package.tar.gz --recipe joomla --webroot . --name lando-joomla
 
 # Should compose create-project a new joomla app
 cd joomla
@@ -51,10 +51,6 @@ lando mysql -V | grep 5.7
 # Should not enable xdebug by default
 cd joomla
 lando php -m | grep xdebug || echo $? | grep 1
-
-# Should have redis running
-cd joomla
-lando ssh -s cache -c "redis-cli CONFIG GET databases"
 
 # Should use the default database connection info
 cd joomla
