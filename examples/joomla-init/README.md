@@ -18,14 +18,9 @@ lando poweroff
 rm -rf joomla && mkdir -p joomla && cd joomla
 lando init --source remote --remote-url https://downloads.joomla.org/cms/joomla4/4-1-0/Joomla_4-1-0-Stable-Full_Package.tar.gz --recipe joomla --webroot . --name lando-joomla
 
-# Should compose create-project a new joomla app
-cd joomla
-cp ../.lando.local.yml .
-lando ssh -s appserver -c "/helpers/install-composer.sh 2"
-rm -rf tmp && lando composer create-project joomla/skeleton tmp && cp -r tmp/. .
-
 # Should start up successfully
 cd joomla
+cp ../.lando.local.yml .
 lando start
 ```
 
@@ -35,9 +30,9 @@ Verification commands
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should use 8.2 as the default php version
+# Should use 7.4 as the default php version
 cd joomla
-lando php -v | grep "PHP 8.2"
+lando php -v | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
 cd joomla
