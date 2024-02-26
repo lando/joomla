@@ -20,7 +20,7 @@ lando init --source remote --remote-url https://downloads.joomla.org/cms/joomla4
 
 # Should start up successfully
 cd joomla
-cp ../.lando.local.yml .
+cp ../../.lando.local.yml .
 lando start
 ```
 
