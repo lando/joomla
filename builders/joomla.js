@@ -6,6 +6,10 @@ const fs = require('fs');
 const path = require('path');
 
 // Tooling defaults
+const getDatabaseType = options => {
+  return _.get(options, '_app.config.services.database.type', options.database) ?? 'mysql';
+};
+
 const toolingDefaults = {
   'composer': {
     service: 'appserver',
