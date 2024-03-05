@@ -5,11 +5,14 @@ const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
 
-// Tooling defaults
+/*
+ * Helper to get database type
+ */
 const getDatabaseType = options => {
   return _.get(options, '_app.config.services.database.type', options.database) ?? 'mysql';
 };
 
+// Tooling defaults
 const toolingDefaults = {
   'composer': {
     service: 'appserver',
