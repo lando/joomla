@@ -20,6 +20,8 @@ jobs:
         leia-test:
           - examples/joomla-custom
           - examples/joomla-defaults
+          - examples/joomla-downstreamer-1
+          - examples/joomla-downstreamer-2
           - examples/joomla-export
           - examples/joomla-import
           - examples/joomla-init
