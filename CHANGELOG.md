@@ -1,4 +1,4 @@
-## v1.1.1 - [March 4, 2024](https://github.com/lando/joomla/releases/tag/v1.1.1)
+## v1.2.1 - [March 4, 2024](https://github.com/lando/joomla/releases/tag/v1.2.1)
 
 ### Fixes
 
