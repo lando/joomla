@@ -1,0 +1,10 @@
+name: joomla-mariadb
+recipe: joomla
+config:
+  webroot: web
+  php: 8.3
+  database: mariadb:11.3
+
+# do not remove this
+plugins:
+  "@lando/joomla": ../..
