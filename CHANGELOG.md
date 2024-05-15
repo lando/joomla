@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.4.0 - [May 15, 2024](https://github.com/lando/joomla/releases/tag/v1.4.0)
+
   * Updated mariadb plugin. [#51](https://github.com/lando/mariadb/issues/51)
 
 ## v1.3.0 - [March 8, 2024](https://github.com/lando/joomla/releases/tag/v1.3.0)
