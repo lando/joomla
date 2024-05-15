@@ -57,7 +57,20 @@ const toolingDefaults = {
   },
 };
 
-// Default DB cli commands
+// MariaDB cli commands
+const mariadbCli = {
+  service: ':host',
+  description: 'Drops into a MariaDB shell on a database service',
+  cmd: 'mariadb -uroot',
+  options: {
+    host: {
+      description: 'The database service to use',
+      default: 'database',
+      alias: ['h'],
+    },
+  },
+};
+// MySQL cli commands
 const mysqlCli = {
   service: ':host',
   description: 'Drops into a MySQL shell on a database service',
@@ -70,6 +83,7 @@ const mysqlCli = {
     },
   },
 };
+// Postgress cli commands
 const postgresCli = {
   service: ':host',
   description: 'Drops into a psql shell on a database service',
@@ -152,8 +166,10 @@ const getDbTooling = database => {
   // Make sure we strip out any version number
   database = database.split(':')[0];
   // Choose wisely
-  if (_.includes(['mysql', 'mariadb'], database)) {
+  if (database === 'mysql') {
     return {mysql: mysqlCli};
+  } else if (database === 'mariadb') {
+    return {mariadb: mariadbCli};
   } else if (database === 'postgres') {
     return {psql: postgresCli};
   } else if (database === 'mongo') {
@@ -187,7 +203,7 @@ const getServiceConfig = (options, types = ['php', 'server', 'vhosts']) => {
 const getTooling = options => _.merge({}, toolingDefaults, getDbTooling(options.database));
 
 /*
- * Build Drupal 7
+ * Build Joomla
  */
 module.exports = {
   name: 'joomla',

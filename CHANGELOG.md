@@ -1,4 +1,9 @@
+## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
+
+  * Updated mariadb plugin. [#51](https://github.com/lando/mariadb/issues/51)
+
 ## v1.3.0 - [March 8, 2024](https://github.com/lando/joomla/releases/tag/v1.3.0)
+
   * Updated to latest database services.
 
 ## v1.2.1 - [March 4, 2024](https://github.com/lando/joomla/releases/tag/v1.2.1)
@@ -11,7 +16,7 @@
 
 ### New Features
 
-* Added support for `php:8.3` 
+* Added support for `php:8.3`
 
 ### Internal
 
@@ -23,15 +28,15 @@
 * Included ability to specify `database: mssql` in the `config` section to maintain backwards compatibility. [@lando/mssql#31](https://github.com/lando/mssql/issues/31)
 
 ## v1.0.1 - [January 4, 2024](https://github.com/lando/joomla/releases/tag/v1.0.1)
-  
+
   * Fixed regression issue with proxy URLs.
 
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/joomla/releases/tag/v1.0.0)
-  
+
   * Dialed fully for `lando update`
 
 ## v0.9.0 - [July 3, 2023](https://github.com/lando/joomla/releases/tag/v0.9.0)
-  
+
   * Removed bundle-dependencies and version-bump-prompt from plugin.
   * Updated package to use prepare-release-action.
   * Updated documentation to reflect new release process.
