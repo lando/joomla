@@ -25,6 +25,8 @@ jobs:
           - examples/joomla-export
           - examples/joomla-import
           - examples/joomla-init
+          - examples/joomla-mariadb
+          - examples/joomla-mariadb-mysql
           - examples/joomla-mysql8
           - examples/joomla-nginx
 
