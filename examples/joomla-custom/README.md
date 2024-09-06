@@ -20,11 +20,11 @@ Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should serve from bob folder
-lando exec appserver -- curl -L appserver_nginx" | grep "HI BOB"
+lando exec appserver -- curl -L appserver_nginx | grep "HI BOB"
 
 # Should be serving from nginx 1.17
-lando exec appserver_nginx -- nginx -v" 2>&1 | grep "nginx version" | grep "nginx/1.17"
-lando exec appserver -- curl -IL appserver_nginx" | grep Server | grep nginx
+lando exec appserver_nginx -- nginx -v 2>&1 | grep "nginx version" | grep "nginx/1.17"
+lando exec appserver -- curl -IL appserver_nginx | grep Server | grep nginx
 
 # Should use php 8.3
 lando php -v | grep "PHP 8.3"

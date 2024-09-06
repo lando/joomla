@@ -1,4 +1,7 @@
 name: joomla-custom
+proxy:
+  appserver_nginx:
+    - another.joomla-custom.lndo.site
 recipe: joomla
 config:
   php: '8.3'
