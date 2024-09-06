@@ -5,8 +5,7 @@ This example exists primarily to test the following documentation:
 
 * [Joomla Recipe](https://docs.devwithlando.io/tutorials/joomla.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -24,8 +23,7 @@ cp ../../.lando.local.yml .
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -36,8 +34,8 @@ lando php -v | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
 cd joomla
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 5.7 by default
 cd joomla
@@ -56,8 +54,7 @@ cd joomla
 lando composer list
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 
