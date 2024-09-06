@@ -1,10 +1,14 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-### Fixes
+## Bug Fixes
 
+* Fixed bug causing default `proxy` settings to be clobbered by user specified ones
 * Switched to `mysql` command for MariaDB 10.3.x and below [#39](https://github.com/lando/joomla/issues/39)
 
-### Internal
+## Internal
+
+* Updated DevOps to use new `lando exec`
+* Updated `ubuntu` test runners to `24.04`
 
 ## v1.4.0 - [May 15, 2024](https://github.com/lando/joomla/releases/tag/v1.4.0)
 

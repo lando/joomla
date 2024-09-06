@@ -5,8 +5,7 @@ This example exists primarily to test the following documentation:
 
 * [Joomla Recipe](https://docs.devwithlando.io/tutorials/joomla.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -24,15 +23,14 @@ cd mysql8
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should return the joomla installation page by default
 cd mysql8
-lando ssh -s appserver -c "curl -L localhost" | grep "Joomla"
+lando exec appserver -- curl -L localhost | grep "Joomla"
 
 # Should use 7.4 as the default php version
 cd mysql8
@@ -40,8 +38,8 @@ lando php -v | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
 cd mysql8
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 8.x by default
 cd mysql8
@@ -60,8 +58,7 @@ cd mysql8
 lando joomla -V
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 
