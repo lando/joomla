@@ -41,9 +41,13 @@ lando mysql joomla -e quit
 # Should have xdebug enabled
 lando php -m | grep Xdebug
 
+# Should have proxy urls present in lando info
+lando info | grep "http://joomla-custom.lndo.site"
+lando info | grep "http://another.joomla-custom.lndo.site"
+
 # Should be using custom config files
 lando exec appserver -- curl -L appserver_nginx/info.php | grep memory_limit | grep 513M
-lando exec appserver_nginx -- cat /opt/bitnami/nginx/conf/vhosts/lando.conf" | grep server_name | grep pirog
+lando exec appserver_nginx -- cat /opt/bitnami/nginx/conf/vhosts/lando.conf | grep server_name | grep pirog
 lando mysql -u root -e "show variables;" | grep thread_cache_size | grep 12
 ```
 
