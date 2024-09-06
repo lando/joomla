@@ -1,14 +1,18 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-  * Use mysql command for MariaDB 10.3.x and below [#39](https://github.com/lando/joomla/issues/39)
+### Fixes
+
+* Switched to `mysql` command for MariaDB 10.3.x and below [#39](https://github.com/lando/joomla/issues/39)
+
+### Internal
 
 ## v1.4.0 - [May 15, 2024](https://github.com/lando/joomla/releases/tag/v1.4.0)
 
-  * Updated mariadb plugin. [#51](https://github.com/lando/mariadb/issues/51)
+* Updated mariadb plugin. [#51](https://github.com/lando/mariadb/issues/51)
 
 ## v1.3.0 - [March 8, 2024](https://github.com/lando/joomla/releases/tag/v1.3.0)
 
-  * Updated to latest database services.
+* Updated to latest database services.
 
 ## v1.2.1 - [March 4, 2024](https://github.com/lando/joomla/releases/tag/v1.2.1)
 
