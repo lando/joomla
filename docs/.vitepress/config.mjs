@@ -19,6 +19,9 @@ export default defineConfig({
     ['link', {rel: 'icon', href: '/joomla/favicon.svg', type: 'image/svg+xml'}],
   ],
   themeConfig: {
+    multiVersionBuild: {
+      satisfies: '>=1.0.0',
+    },
     sidebar: sidebar(),
   },
 });
