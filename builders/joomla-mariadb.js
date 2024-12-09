@@ -10,6 +10,6 @@ module.exports = {
   builder: (parent, config) => class JoomlaMariadb extends LandoMariadb.builder(parent, LandoMariadb.config) {
     constructor(id, options = {}) {
       super(id, _.merge({}, config, options), {services: _.set({}, options.name)});
-    };
+    }
   },
 };
