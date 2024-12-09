@@ -8,7 +8,7 @@ next: ./getting-started.html
 
 Joomla! is an award-winning content management system (CMS) which enables you to build web sites and powerful online applications.
 
-Lando offers a configurable [recipe](https://docs.lando.dev/core/v3/recipes.html) for developing [Joomla](https://www.joomla.org/) apps.
+Lando offers a configurable [recipe](https://docs.lando.dev/landofile/recipes.html) for developing [Joomla](https://www.joomla.org/) apps.
 
 #### Features of this plugin:
 
