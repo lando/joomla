@@ -53,12 +53,13 @@ lando mysql -ujoomla -pjoomla joomla -e quit
 cd joomla
 lando composer list
 
-# Should have defaults in the .lando.yml file
+# Should have defaults in the .lando.yml file and still have webroot
 cd joomla
-cat .lando.yml | grep "php: 7.4"
+cat .lando.yml | grep 'php: "7.4"'
 cat .lando.yml | grep "via: apache"
 cat .lando.yml | grep "xdebug: false"
 cat .lando.yml | grep "database: mysql"
+cat .lando.yml | grep "webroot: ."
 ```
 
 ## Destroy tests
