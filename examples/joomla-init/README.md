@@ -55,7 +55,7 @@ lando composer list
 
 # Should have defaults in the .lando.yml file
 cd joomla
-cat .lando.yml | grep 'php: "7.4"'
+cat .lando.yml | grep "via: apache"
 ```
 
 ## Destroy tests
