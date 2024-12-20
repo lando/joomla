@@ -53,6 +53,10 @@ lando mysql -ujoomla -pjoomla joomla -e quit
 cd joomla
 lando composer list
 
+# Should cat the lando.yml file
+cd joomla
+cat .lando.yml
+
 # Should have defaults in the .lando.yml file and still have webroot
 cd joomla
 cat .lando.yml | grep 'php: "7.4"'
