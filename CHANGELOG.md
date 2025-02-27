@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Added defaults for initialization.
+
 ## v1.8.0 - [December 9, 2024](https://github.com/lando/joomla/releases/tag/v1.8.0)
 
 * Optimized for `midcore`
