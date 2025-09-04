@@ -1,7 +1,6 @@
 ---
 title: Joomla Lando Plugin
 description: Use Joomla on Lando for local development; powered by Docker and Docker Compose, config php version, swap db backends or web server, use composer, Joomla CLI, xdebug and custom config files, oh and also import and export databases.
-next: ./getting-started.html
 ---
 
 # Joomla
@@ -12,7 +11,7 @@ Lando offers a configurable [recipe](https://docs.lando.dev/landofile/recipes.ht
 
 #### Features of this plugin:
 
-* Configurable `php` version from `5.3` all the way to `8.3`
+* Configurable `php` version from `5.3` all the way to `8.4+`
 * Configurable `webroot`
 * Configurable web server (`apache` or `nginx`)
 * Configurable database backend (`mariadb`, `mysql`, or `postgres`)
