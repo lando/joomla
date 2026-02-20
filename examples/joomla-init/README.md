@@ -52,6 +52,10 @@ lando mysql -ujoomla -pjoomla joomla -e quit
 # Should have console available
 cd joomla
 lando composer list
+
+# Should have defaults in the .lando.yml file
+cd joomla
+cat .lando.yml | grep "via: apache"
 ```
 
 ## Destroy tests
