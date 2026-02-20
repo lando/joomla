@@ -3,7 +3,7 @@
 This is the _official_ [Lando](https://lando.dev) plugin for [Joomla](https://www.joomla.org/). When installed it...
 
 * Allows users to run `joomla` cms
-* Allows users to configure `php` version from `5.3` all the way to `8.1`
+* Allows users to configure `php` version from `5.3` all the way to `8.5`+
 * Allows users to configure `webroot`
 * Allows users to configure web server to (`apache` or `nginx`)
 * Allows users to configure database backend to (`mariadb` or `mysql`)
@@ -45,6 +45,7 @@ We try to log all changes big and small in both [THE CHANGELOG](https://github.c
 
 * [@pirog](https://github.com/pirog)
 * [@reynoldsalec](https://github.com/reynoldsalec)
+* [@AaronFeledy](https://github.com/AaronFeledy)
 
 ## Contributors
 
@@ -56,5 +57,8 @@ Made with [contributors-img](https://contrib.rocks).
 
 ## Other Selected Resources
 
-* [LICENSE](https://github.com/lando/joomla/blob/main/LICENSE.md)
-* [The best professional advice ever](https://www.youtube.com/watch?v=tkBVDh7my9Q)
+* [LICENSE](/LICENSE)
+* [TERMS OF USE](https://docs.lando.dev/terms)
+* [PRIVACY POLICY](https://docs.lando.dev/privacy)
+* [CODE OF CONDUCT](https://docs.lando.dev/coc)
+
