@@ -4,18 +4,10 @@
 
 * Updated `@lando/php` to `^1.11.1`
 * Added automatic promotion of npm `edge` tag to `latest` on GitHub release publish
-
-## v1.10.0 - [February 18, 2026](https://github.com/lando/joomla/releases/tag/v1.10.0)
-
 * Updated to [@lando/php@1.10.0](https://github.com/lando/php/releases/tag/v1.10.0)
 * Updated to [@lando/mariadb@1.8.0](https://github.com/lando/mariadb/releases/tag/v1.8.0)
 * Updated to [@lando/postgres@1.6.0](https://github.com/lando/postgres/releases/tag/v1.6.0)
 * Updated to [@lando/argv@1.2.0](https://github.com/lando/argv/releases/tag/v1.2.0)
-* Fixed release workflow trigger from `created` to `published`
-* Updated CI actions (`actions/checkout` v6, `actions/setup-node` v6, `actions/cache` v5, `actions/add-to-project` v1.0.2)
-* Added dependabot configuration
-* Updated README with PHP 8.5+ support and maintainers
-* Cleaned up sync-conflict files
 
 ## v1.9.0 - [September 4, 2025](https://github.com/lando/joomla/releases/tag/v1.9.0)
 
