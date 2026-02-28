@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Removed `--ansi` flag from composer tooling command to prevent escape codes in redirected output
+
 ## v1.10.0 - [February 20, 2026](https://github.com/lando/joomla/releases/tag/v1.10.0)
 
 * Updated `@lando/php` to `^1.11.1`
