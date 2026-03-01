@@ -148,7 +148,6 @@ const getServices = options => ({
   },
   database: {
     config: getServiceConfig(options, ['database']),
-    authentication: 'mysql_native_password',
     type: `joomla-${options.database}`,
     portforward: true,
     creds: {
